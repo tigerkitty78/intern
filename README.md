@@ -12,7 +12,7 @@ Steps to Run the App
 
 bash
 
-git clone https://github.com/yourusername/yourrepository.git
+git clone https://github.com/tigerkitty78/intern
 cd yourrepository
 
 2. Build the Docker Image
