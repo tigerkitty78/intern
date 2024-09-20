@@ -1,0 +1,14 @@
+# Ignore CSV files in the csv_files directory
+/csv_files/*.csv
+# Ignore specific SQLite database
+/db.sqlite3
+# Ignore large CSV files
+practice2/csv_files/Ganison_dataset_1.csv
+practice2/csv_files/Ganison_dataset_2.csv
+practice2/csv_files/ganison_dataset_3.csv
+practice2/csv_files/ganison_dataset_4.csv
+practice2/csv_files/ganison_dataset_5.csv
+practice2/csv_files/ganison_dataset_6.csv
+
+# Ignore SQLite database file
+practice2/db.sqlite3

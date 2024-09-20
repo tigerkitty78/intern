@@ -1,0 +1,227 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Tables Display</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Data Tables</h1>
+
+        <!-- School Table -->
+        <h3>School</h3>
+        <table id="schoolTable" class="display table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for school in schools %}
+                <tr>
+                    <td>{{ school.id }}</td>
+                    <td>{{ school.Name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Class Table -->
+        <h3>Class</h3>
+        <table id="classTable" class="display table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Class</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for class in classes %}
+                <tr>
+                    <td>{{ class.id }}</td>
+                    <td>{{ class.Class }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Assessment Areas Table -->
+        <h3>Assessment Areas</h3>
+        <table id="assessmentTable" class="display table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for assessment_area in assessment_areas %}
+                <tr>
+                    <td>{{ assessment_area.id }}</td>
+                    <td>{{ assessment_area.Name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Student Table -->
+        <h3>Student</h3>
+        <table id="studentTable" class="display table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fullname</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{ student.id }}</td>
+                    <td>{{ student.Fullname }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Answers Table -->
+        <h3>Answers</h3>
+        <table id="answersTable" class="display table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for answer in answers %}
+                <tr>
+                    <td>{{ answer.id }}</td>
+                    <td>{{ answer.Answer }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Awards Table -->
+        <h3>Awards</h3>
+        <table id="awardsTable" class="display table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for award in awards %}
+                <tr>
+                    <td>{{ award.id }}</td>
+                    <td>{{ award.Name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Subject Table -->
+        <h3>Subject</h3>
+        <table id="subjectTable" class="display table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Subject</th>
+                    <th>Subject Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for subject in subjects %}
+                <tr>
+                    <td>{{ subject.id }}</td>
+                    <td>{{ subject.Subject }}</td>
+                    <td>{{ subject.Subject_score }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Summary Table -->
+        <h3>Summary</h3>
+        <table id="summaryTable" class="display table table-striped">
+            <thead>
+                <tr>
+                    <th>School ID</th>
+                    <th>Sydney Participant</th>
+                    <th>Sydney Percentile</th>
+                    <th>Assessment Area ID</th>
+                    <th>Award ID</th>
+                    <th>Class ID</th>
+                    <th>Correct Answer</th>
+                    <th>Percentage Per Class</th>
+                    <th>Student ID</th>
+                    <th>Participant</th>
+                    <th>Student Score</th>
+                    <th>Subject ID</th>
+                    <th>Category ID</th>
+                    <th>Year Level Name</th>
+                    <th>Answer ID</th>
+                    <th>Correct Answer ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for summary in summaries %}
+                <tr>
+                    <td>{{ summary.School_Id }}</td>
+                    <td>{{ summary.Sydney_Participant }}</td>
+                    <td>{{ summary.Sydney_Percentile }}</td>
+                    <td>{{ summary.Assessment_Area_Id }}</td>
+                    <td>{{ summary.Award_Id }}</td>
+                    <td>{{ summary.Class_Id }}</td>
+                    <td>{{ summary.Correct_Answer }}</td>
+                    <td>{{ summary.Correct_answer_percentage_per_class }}</td>
+                    <td>{{ summary.Student_Id }}</td>
+                    <td>{{ summary.Participant }}</td>
+                    <td>{{ summary.Student_score }}</td>
+                    <td>{{ summary.Subject_Id }}</td>
+                    <td>{{ summary.Category_Id }}</td>
+                    <td>{{ summary.Year_level_name }}</td>
+                    <td>{{ summary.Answer_Id }}</td>
+                    <td>{{ summary.Correct_answer_id }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <!-- Initialize DataTables -->
+    <script>
+        $(document).ready(function() {
+            $('#schoolTable, #classTable, #assessmentTable, #studentTable, #answersTable, #awardsTable, #subjectTable, #summaryTable').DataTable({
+                "pageLength": 5,
+                "lengthMenu": [5, 10, 20, 50],
+                language: {
+                    'paginate': {
+                        'previous': '<span class="fa fa-chevron-left"></span>',
+                        'next': '<span class="fa fa-chevron-right"></span>'
+                    },
+                    "lengthMenu": 'Display <select class="form-control input-sm">'+
+                        '<option value="5">5</option>'+
+                        '<option value="10">10</option>'+
+                        '<option value="20">20</option>'+
+                        '<option value="50">50</option>'+
+                        '</select> results'
+                }
+            });
+        });
+    </script>
+</body>
+</html>
